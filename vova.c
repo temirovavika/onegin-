@@ -26,10 +26,4 @@ void sortirovka_of_numbers(int* numbers, int stolbec)
         }
     }
 
-    /*for (int g = 0; g < stolbec; g++)
-    {
-        printf(" %d ", numbers[g]);
-    } */
-
-
 }
