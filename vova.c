@@ -1,29 +1,40 @@
 #include <stdio.h>
-void sortirovka_of_numbers(int* numbers, int stolbec);
+#include <string.h>
+
+void sortirovka_strok( const char* onegin[], int kolvo_strok);
 int main(void)
 {
-    int numbers[] = {8, 9, 4, 2, 7, 3, 6, 1};
-    int stolbec = sizeof(numbers) / sizeof(numbers[0]);
-    sortirovka_of_numbers(numbers, stolbec);
-    for (int g = 0; g < stolbec; g++)
+
+     const char* onegin[] = {"maria",
+                        "aleksandra bebrina",
+                        "vovanaumkin",
+                        "matvey",
+                        "bogdan",
+                        "alrudia",
+                        "gleb",
+                        "polina"};
+
+    int kolvo_strok = sizeof(onegin) / sizeof(onegin[0]);
+    sortirovka_strok(onegin, kolvo_strok);
+    for (int g = 0 ; g < kolvo_strok; g++)
     {
-        printf(" %d ", numbers[g]);
+        printf("%s\n", onegin[g]);
     }
 
 }
-void sortirovka_of_numbers(int* numbers, int stolbec)
+
+void sortirovka_strok( const char* onegin[], int kolvo_strok)
 {
-    for (int i = 0; i < stolbec - 1 ; i++ )
+    for (int i = 0; i < kolvo_strok - 1; i++)
     {
-        for (int j = 0; j < stolbec - i - 1; j++)
+        for (int j = 0; j < kolvo_strok - 1 - i; j++)
         {
-            if (numbers[j] > numbers[j+1])
-            {
-                int temp = numbers[j];
-                           numbers[j] = numbers[j+1];
-                                        numbers[j+1] = temp;
-            }
+           if (strlen(onegin[j]) > strlen(onegin[j+1]))
+           {
+               const char* temp = onegin[j];
+                        onegin[j] = onegin[j+1];
+                                    onegin[j+1] = temp;
+           }
         }
     }
-
 }
